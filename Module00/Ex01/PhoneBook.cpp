@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 19:22:02 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/07/15 23:02:09 by mamaratr         ###   ########.fr       */
+/*   Updated: 2025/07/16 10:06:04 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,28 +57,6 @@ void PhoneBook::add(void) {
 	this->_index++;
 }
 
-void PhoneBook::display(Contact contact) {
-
-	std::cout << std::endl << "Contact Details:" << std::endl;
-	if (!contact.getFirstName().size()) {
-		std::cout << "Failed to get information about contact." << std::endl;
-		return ;
-	}
-	std::cout << "First Name: " << contact.getFirstName() << std::endl;
-	std::cout << "Last Name: " << contact.getLastName() << std::endl;
-	std::cout << "Nickname: " << contact.getNickname() << std::endl;
-	std::cout << "Phone Number: " << contact.getPhoneNumber() << std::endl;
-	std::cout << "Darkest Secret: " << contact.getDarkestSecret() << std::endl;
-}
-
-Contact PhoneBook::getContact(int index) {
-	if (index < 0 || index >= 8) {
-		std::cerr << "Error: Index out of bounds." << std::endl;
-		return Contact();
-	}
-	return this->_contacts[index];
-}
-
 static std::string formatField(const std::string& str) {
 	if (str.length() > 10)
 		return str.substr(0, 9) + ".";
@@ -86,7 +64,6 @@ static std::string formatField(const std::string& str) {
 }
 
 void PhoneBook::displayContacts() {
-
 	int i = 0;
 	std::cout << std::setw(10) << "Index" << "|"
 			  << std::setw(10) << "First Name" << "|"
@@ -112,7 +89,6 @@ void PhoneBook::search(void) {
 
 	std::string input;
 	int index = -1;
-
 	while (!std::cin.eof()) {
 		std::cout << "Enter index of contact to display: ";
 		if (std::getline(std::cin, input) && !input.empty()) {

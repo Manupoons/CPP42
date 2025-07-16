@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 19:23:03 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/07/15 22:51:44 by mamaratr         ###   ########.fr       */
+/*   Updated: 2025/07/16 10:11:15 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,16 @@ class PhoneBook {
 	private:
 		Contact _contacts[8];
 		int _index;
-
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-
-		void add(void);
-		void search(void);
-		void display(Contact contact);
+		
 		void displayContacts();
 		std::string promptAndGet(const std::string &prompt);
 		
-		Contact getContact(int index);
+	public:
+		PhoneBook(void);
+		~PhoneBook(void);
+		
+		void add(void);
+		void search(void);
 };
 
 #endif

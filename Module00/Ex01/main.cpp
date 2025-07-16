@@ -6,30 +6,30 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 22:46:42 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/07/15 23:00:06 by mamaratr         ###   ########.fr       */
+/*   Updated: 2025/07/16 10:13:35 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-int	main(void)
-{
-	PhoneBook pb1;
+int	main(void) {
+	PhoneBook pb;
 	std::string str;
 
-	while (str != "EXIT")
-	{
-		std::cout << "Enter a command > ";
-		std::getline(std::cin, str);
-		if (str == "ADD")
-			pb1.add();
-		else if (str == "SEARCH")
-			pb1.search();
-		if (std::cin.eof()) //if ctrlD -> \n
-		{
+	while (true) {
+		std::cout << "Enter a command (ADD, SEARCH, EXIT) > ";
+		if (!std::getline(std::cin, str)) {
 			std::cout << std::endl;
-			return (0);
+			break;
 		}
+		if (str == "ADD")
+			pb.add();
+		else if (str == "SEARCH")
+			pb.search();
+		else if (str == "EXIT")
+			break ;
+		else if (!str.empty())
+			std::cout << "Invalid command. Please enter ADD, SEARCH or EXIT." << std::endl;
 	}
 	return (0);
 }
