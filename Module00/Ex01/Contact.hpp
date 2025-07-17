@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 19:23:58 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/07/15 19:29:39 by mamaratr         ###   ########.fr       */
+/*   Updated: 2025/07/17 12:36:10 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Contact {
 	private:
 		std::string firstName;
 		std::string lastName;
-		std::string nickname;
+		std::string nickName;
 		std::string phoneNumber;
 		std::string darkestSecret;
 

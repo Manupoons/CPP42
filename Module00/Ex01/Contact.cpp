@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 19:28:20 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/07/15 19:31:27 by mamaratr         ###   ########.fr       */
+/*   Updated: 2025/07/17 12:36:20 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ std::string Contact::getLastName(void) const {
 }
 
 std::string Contact::getNickname(void) const {
-	return (this->nickname);
+	return (this->nickName);
 }
 
 std::string Contact::getPhoneNumber(void) const {
@@ -45,7 +45,7 @@ void Contact::setLastName(std::string str) {
 }
 
 void Contact::setNickName(std::string str) {
-	this->nickname = str;
+	this->nickName = str;
 }
 
 void Contact::setPhoneNumber(std::string str) {
