@@ -1,4 +1,4 @@
-NAME = clapTrap
+NAME = scavTrap
 
 BRIGHT_GREEN = \033[1;92m
 
@@ -7,7 +7,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
