@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 19:22:02 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/07/16 10:06:04 by mamaratr         ###   ########.fr       */
+/*   Updated: 2025/11/18 17:07:34 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ std::string PhoneBook::promptAndGet(const std::string &prompt) {
 
 void PhoneBook::add(void) {
 
-	std::string str;
-	
 	if (this->_index > 7)
 		std::cout << "Warning: overwriting info about " 
 				  << this->_contacts[this->_index % 8].getFirstName()
@@ -84,7 +82,7 @@ void PhoneBook::search(void) {
 		std::cout << "PhoneBook is empty." << std::endl;
 		return;
 	}
-	
+
 	displayContacts();
 
 	std::string input;
@@ -100,7 +98,7 @@ void PhoneBook::search(void) {
 			std::cout << "Invalid index." << std::endl;
 		}
 	}
-	
+
 	if (!std::cin.eof()) {
 		Contact contact = this->_contacts[index];
 		std::cout << "First Name: " << contact.getFirstName() << std::endl;

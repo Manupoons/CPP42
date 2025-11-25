@@ -11,7 +11,7 @@ SRC = megaphone.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-.cpp.o:
+%.o: %.cpp
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 all: $(NAME)
