@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 10:26:36 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/07/25 10:31:33 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/04/03 10:56:24 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 
 #include <iostream>
 
-class Fixed {
+class Fixed
+{
 	private:
-		int numValue;
-		static const int fractionalBits = 8;
+		int _value;
+		static const int _bits = 8;
 
 	public:
 		Fixed();
-		Fixed(const Fixed &other);
-		Fixed &operator=(const Fixed &other);
+		Fixed(const Fixed& copy);
+		Fixed &operator=(const Fixed& other);
 		~Fixed();
 
-		int getRawBits() const;
+		int getRawBits(void) const;
 		void setRawBits(int const raw);
 };
 
