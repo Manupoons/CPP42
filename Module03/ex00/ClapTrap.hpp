@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 16:50:50 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/08/02 18:19:01 by mamaratr         ###   ########.fr       */
+/*   Created: 2026/04/03 18:54:00 by mamaratr          #+#    #+#             */
+/*   Updated: 2026/04/03 18:54:02 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 class ClapTrap
 {
 	private:
-		std::string name;
-		unsigned int hitPoints;
-		unsigned int energyPoints;
-		unsigned int attackDamage;
-
+		std::string _name;
+		int _hp;
+		int _mana;
+		int _atk;
+		
 	public:
 		ClapTrap(std::string name);
 		~ClapTrap();
 
-		void attack(const std::string &target);
+		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };

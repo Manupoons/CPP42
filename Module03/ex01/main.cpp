@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 16:51:01 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/08/07 18:36:21 by mamaratr         ###   ########.fr       */
+/*   Created: 2026/04/03 18:56:00 by mamaratr          #+#    #+#             */
+/*   Updated: 2026/04/03 18:56:02 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,16 @@
 
 int	main()
 {
-	std::cout << CYAN << "Creating ScavTrap:" << RESET << std::endl;
 	ScavTrap scav("SC4V-TP");
 
 	std::cout << GREEN << "\n[Action] ";
 	scav.attack("target1");
-	std::cout << GREEN << "[Action] ";
+	std::cout << "[Action] ";
 	scav.guardGate();
-	std::cout << GREEN << "[Action] ";
+	std::cout << "[Action] ";
 	scav.takeDamage(30);
-	std::cout << GREEN << "[Action] ";
+	std::cout << "[Action] ";
 	scav.beRepaired(20);
-
-	std::cout << std::endl << MAGENTA << "ScavTrap going out of scope:" << RESET << std::endl;
+	std::cout << RESET << std::endl;
 	return 0;
 }

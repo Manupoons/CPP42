@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/03 18:54:06 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/04/03 18:54:09 by mamaratr         ###   ########.fr       */
+/*   Created: 2026/04/03 18:53:45 by mamaratr          #+#    #+#             */
+/*   Updated: 2026/04/03 18:54:25 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void ClapTrap::attack(const std::string& target)
 			this->_mana--;
 	}
 	else if (this->_hp <= 0)
-		std::cout << "No hit points left to attack!" << std::endl;
+		std::cout << "ClapTrap is out of hit points and can't attack!" << std::endl;
 	else
-		std::cout << "No mana left to attack!" << std::endl;
+		std::cout << "ClapTrap has no mana left!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)

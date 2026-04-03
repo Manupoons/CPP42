@@ -5,21 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/03 18:55:55 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/04/03 18:55:56 by mamaratr         ###   ########.fr       */
+/*   Created: 2026/04/03 18:54:55 by mamaratr          #+#    #+#             */
+/*   Updated: 2026/04/03 19:00:50 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+{
 	this->_hp = 100;
 	this->_mana= 50;
 	this->_atk = 20;
 	std::cout << "ScavTrap constructor called for " << this->_name << std::endl;
 }
 
-ScavTrap::~ScavTrap() {
+ScavTrap::~ScavTrap()
+{
 	std::cout << "ScavTrap destructor called for " << this->_name << std::endl;
 }
 

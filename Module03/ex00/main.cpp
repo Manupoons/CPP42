@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 16:51:01 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/08/07 18:33:05 by mamaratr         ###   ########.fr       */
+/*   Created: 2026/04/03 18:55:19 by mamaratr          #+#    #+#             */
+/*   Updated: 2026/04/03 18:55:20 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@
 #define CYAN    "\033[36m"
 
 int	main() {
-	std::cout << CYAN << "Creating ClapTrap:" << RESET << std::endl;
 	ClapTrap clapTrap("Clappy");
-
-	std::cout << std::endl;
 
 	std::cout << RED << "[Action] ";
 	clapTrap.attack("target");
@@ -35,8 +32,6 @@ int	main() {
 	std::cout << GREEN << "[Action] ";
 	clapTrap.beRepaired(3);
 	std::cout << RESET;
-
-	std::cout << std::endl;
 
 	return 0;
 }

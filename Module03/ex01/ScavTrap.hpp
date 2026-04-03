@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 17:33:57 by mamaratr          #+#    #+#             */
-/*   Updated: 2025/08/07 18:15:12 by mamaratr         ###   ########.fr       */
+/*   Created: 2026/04/03 18:55:49 by mamaratr          #+#    #+#             */
+/*   Updated: 2026/04/03 18:55:50 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ScavTrap : public ClapTrap
 		ScavTrap(std::string name);
 		~ScavTrap();
 		
-		void attack(const std::string &target);
+		void attack(const std::string& target);
 		void guardGate();
 };
 
