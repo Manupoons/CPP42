@@ -1,4 +1,4 @@
-NAME = polymorphism
+NAME = animal
 
 BRIGHT_GREEN = \033[1;92m
 
