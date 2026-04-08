@@ -1,4 +1,4 @@
-NAME = polymorphism
+NAME = animal
 
 BRIGHT_GREEN = \033[1;92m
 
@@ -7,7 +7,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
