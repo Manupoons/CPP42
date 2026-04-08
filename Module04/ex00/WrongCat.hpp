@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamaratr <mamaratr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 19:06:45 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/04/07 19:25:57 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/04/08 10:23:00 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ class WrongCat : public WrongAnimal {
 		WrongCat();
 		WrongCat(const WrongCat& copy);
 		WrongCat& operator=(const WrongCat& assign);
-		~WrongCat();
+		virtual ~WrongCat();
 
 		void makeSound(void) const;
-		std::string getType(void) const;
 };
 
 #endif
