@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 10:06:05 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/04/09 11:46:29 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:55:45 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 int main()
 {
-	// ❌ This should NOT compile (uncomment to test)
 	// AAnimal a;
 
 	AAnimal *zoo[4];
