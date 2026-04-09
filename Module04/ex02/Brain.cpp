@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/08 10:29:19 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/04/08 10:49:18 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:47:03 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ Brain::Brain() {
 }
 
 Brain::Brain(const Brain& copy) {
-	std::cout << "Brain constructor" << std::endl;
-	*this = copy;
+	std::cout << "Brain copy" << std::endl;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = copy._ideas[i];
 }
 
 Brain& Brain::operator=(const Brain& assign) {
-	std::cout << "Brain constructor" << std::endl;
+	std::cout << "Brain assign" << std::endl;
 	if (this != &assign)
 	{
 		for (int i = 0; i < 100; i++)
