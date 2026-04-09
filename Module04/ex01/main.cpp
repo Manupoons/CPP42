@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 10:06:05 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/04/08 12:03:24 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:32:12 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,17 @@ int main() {
 
 	Cat* original = new Cat();
 	Cat* copy = new Cat();
-
+	std::cout << std::endl;
 	original->setIdea(0, "I am the original");
 	copy->setIdea(0, "I am the copy");
+	std::cout << std::endl;
 	std::cout << "Original: " << original->getIdea(0) << std::endl;
 	std::cout << "Copy: " << copy->getIdea(0) << std::endl;
+	std::cout << std::endl;
 	*copy = *original;
 	std::cout << "Original: " << original->getIdea(0) << std::endl;
 	std::cout << "Copy: " << copy->getIdea(0) << std::endl;
+	std::cout << std::endl;
 	
 	delete original;
 	delete copy;
