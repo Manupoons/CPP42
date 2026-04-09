@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 19:06:45 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/04/08 10:23:00 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:07:07 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat();
 		WrongCat(const WrongCat& copy);
 		WrongCat& operator=(const WrongCat& assign);
-		virtual ~WrongCat();
+		~WrongCat();
 
 		void makeSound(void) const;
 };

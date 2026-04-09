@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamaratr <mamaratr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 19:07:23 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/04/07 19:13:05 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:00:14 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() {
-	std::cout << "WrongAnimal called" << std::endl;
+	std::cout << "WrongAnimal constructor" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& copy) {

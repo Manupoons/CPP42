@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamaratr <mamaratr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 10:07:19 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/04/07 19:24:02 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/04/09 10:56:57 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ class Dog : public Animal {
 		Dog();
 		Dog(const Dog& copy);
 		Dog& operator=(const Dog& assign);
-		virtual ~Dog();
+		~Dog();
 		
-		virtual void makeSound(void) const;
-		std::string getType(void);
+		void makeSound(void) const;
 };
 
 #endif
