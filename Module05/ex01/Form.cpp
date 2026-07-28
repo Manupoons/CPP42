@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: mamaratr <mamaratr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 11:08:03 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/07/28 08:56:38 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/07/28 10:12:27 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,15 @@ char const *Form::GradeTooLowException::what(void) const throw()
 	return ("Grade is too low");
 }
 
-std::ostream &operator<<(std::ostream &out, Form const &form)
+std::ostream &operator<<(std::ostream &str, Form const &form)
 {
-	return (out << "Form name: " << form.getName() << ", is signed: " << form.getIsSigned() << ", grade to sign: " << form.getGradeToSign() << ", grade to execute: " << form.getGradeToExecute() << std::endl);
+	str << "Name: " << form.getName() << std::endl;
+	str << "isSigned: ";
+	if (form.getIsSigned())
+		str << "true" << std::endl;
+	else
+		str << "false" << std::endl;
+	str << "Grade to sign: " << form.getGradeToSign() << std::endl;
+	str << "Grade to execute: " << form.getGradeToExecute() << std::endl;
+	return (str);
 }
