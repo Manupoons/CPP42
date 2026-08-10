@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 10:28:45 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/05 10:52:15 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/08/10 12:47:29 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ template <typename T>
 Array<T>::Array()
 {
 	this->a_size = 0;
-	this->array = new T[this->a_size];
+	this->array = new T[this->a_size]();
 }
 
 template <typename T>
 Array<T>::Array(unsigned int n)
 {
 	this->a_size = n;
-	this->array = new T[this->a_size];
+	this->array = new T[this->a_size]();
 }
 
 template <typename T>

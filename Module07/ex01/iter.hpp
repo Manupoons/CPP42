@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 09:59:17 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/05 10:10:34 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/08/10 11:23:32 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,30 @@
 #define ITER_HPP
 
 #include <string>
+# include <iostream>
 
-template <typename A, typename L>
-void iter(A *array, L len, void (*f)(A&))
+# define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
+
+
+template <typename T>
+void	printElement(const T &element)
 {
-	if (array == NULL || f == NULL)
-		return;
-		
-	size_t size = static_cast<long>(len);
-	
-	for (size_t i = 0; i < size; i++)
-	{
-		f(array[i]);
-	}
+	std::cout << "Element: "<< element << std::endl;
 }
 
-template <typename A, typename L, typename T>
-void iter(A *array, L len, void (*f)(const T&))
+void	sumOne(int &num)
 {
-	if (array == NULL || f == NULL)
+	num += 1;
+	std::cout << "Element + 1: " << num << std::endl;
+}
+
+template <typename T, typename F>
+void iter(T *array, size_t const len, F f)
+{
+	if (array == NULL)
 		return;
-		
-	size_t size = static_cast<long>(len);
-	
-	for (size_t i = 0; i < size; i++)
-	{
+	for (size_t i = 0; i < len; i++)
 		f(array[i]);
-	}
 }
 
 #endif
