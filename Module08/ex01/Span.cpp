@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:36:50 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/05 12:36:54 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/08/11 09:09:58 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void Span::addNumber(int number)
 
 int Span::shortestSpan()
 {
-	if (this->limit <= 1 || this->stock.empty())
+	if (this->stock.size() <= 1)
 		throw std::length_error("Not enough numbers to find shortest span!");
 	std::vector<int> temp = this->stock;
 	std::sort(temp.begin(), temp.end());
@@ -82,7 +82,7 @@ int Span::shortestSpan()
 
 int Span::longestSpan()
 {
-	if (this->limit <= 1 || this->stock.empty())
+	if (this->stock.size() <= 1)
 		throw std::length_error("Not enough numbers to find longest span!");
 	int max = *std::max_element(this->stock.begin(), this->stock.end());
 	int min = *std::min_element(this->stock.begin(), this->stock.end());

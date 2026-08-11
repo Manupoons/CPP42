@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:21:36 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/05 11:28:32 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/08/11 08:55:19 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@ int main(void) {
 		}
 		std::cout << std::endl;
 		
-		int number = 5;
+		int num = 5;
 		try {
-			std::vector<int>::iterator it = easyfind(numbers, number);
-			std::cout <<"Search: " << number << ". Position: " << it - numbers.begin() << std::endl;
+			std::vector<int>::iterator it = easyfind(numbers, num);
+			std::cout <<"Search: " << num << ". Position: " << it - numbers.begin() << std::endl;
 		} catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
 		
-		number = 19;
+		num = 19;
 		try {
-			std::vector<int>::iterator it = easyfind(numbers, number);
-			std::cout << "Search: " << number << ". Position: " << it - numbers.begin() << std::endl;
+			std::vector<int>::iterator it = easyfind(numbers, num);
+			std::cout << "Search: " << num << ". Position: " << it - numbers.begin() << std::endl;
 		} catch (std::exception& e) {
-			std::cout << "Search: " << number << ". " << e.what() << std::endl;
+			std::cout << "Search: " << num << ". " << e.what() << std::endl;
 		}
 		
 		std::cout << std::endl;
@@ -64,20 +64,20 @@ int main(void) {
 		}
 		std::cout << std::endl;
 		
-		int number = 5;
+		int num = 5;
 		try {
-			std::deque<int>::iterator it = easyfind(numbers, number);
-			std::cout <<"Search: " << number << ". Position: " << it - numbers.begin() << std::endl;
+			std::deque<int>::iterator it = easyfind(numbers, num);
+			std::cout <<"Search: " << num << ". Position: " << it - numbers.begin() << std::endl;
 		} catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
 		
-		number = 10;
+		num = 10;
 		try {
-			std::deque<int>::iterator it = easyfind(numbers, number);
-			std::cout << "Search: " << number << ". Position: " << it - numbers.begin() << std::endl;
+			std::deque<int>::iterator it = easyfind(numbers, num);
+			std::cout << "Search: " << num << ". Position: " << it - numbers.begin() << std::endl;
 		} catch (std::exception& e) {
-			std::cout << "Search: " << number << ". " << e.what() << std::endl;
+			std::cout << "Search: " << num << ". " << e.what() << std::endl;
 		}
 		
 		std::cout << std::endl;
@@ -96,22 +96,21 @@ int main(void) {
 		}
 		std::cout << std::endl;
 		
-		int number = 70;
+		int num = 70;
 		try {
-			easyfind(numbers, number);
-			std::cout <<"Search: " << number << ". Found!" << std::endl;
+			easyfind(numbers, num);
+			std::cout <<"Search: " << num << ". Found!" << std::endl;
 		} catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
 		
-		number = 10;
+		num = 10;
 		try {
-			easyfind(numbers, number);
-			std::cout << "Search: " << number << ". Found!" << std::endl;
+			easyfind(numbers, num);
+			std::cout << "Search: " << num << ". Found!" << std::endl;
 		} catch (std::exception& e) {
-			std::cout << "Search: " << number << ". " << e.what() << std::endl;
+			std::cout << "Search: " << num << ". " << e.what() << std::endl;
 		}
-		
 		std::cout << std::endl;
 	}
 	return (0);

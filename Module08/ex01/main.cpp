@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:36:47 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/05 12:33:59 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/08/11 09:12:52 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int main(void) {
 			std::cerr << e.what() << std::endl;
 		}
 		std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
-		std::cout << "Longest span: " << sp.longestSpan() << std::endl;	
+		std::cout << "Longest span: " << sp.longestSpan() << std::endl;
 	}
 	return (0);
 }
