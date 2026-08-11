@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 10:51:06 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/05 10:57:54 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/08/11 08:34:07 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	printArray(const Array<T> &arr, const std::string &name)
 		std::cout << arr[i] << " ";
 	std::cout << "]" << std::endl;
 }
- 
+
 int	main(void)
 {
 	std::cout << "\t-- DEFAULT CONSTRUCTOR --" << std::endl;
