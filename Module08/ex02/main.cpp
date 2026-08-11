@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 13:33:19 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/10 10:46:00 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/08/11 10:25:20 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,6 @@ int main(void) {
 		MutantStack<std::string>::iterator it = mstack.begin();
 		MutantStack<std::string>::iterator ite = mstack.end();
 		std::cout << "begin():\t" << *it << std::endl;
-		// std::cout << "end():\t" << *ite << std::endl;
 		std::cout << "++begin():\t" << *(++it) << std::endl;
 		std::cout << "--end():\t" << *(--ite) << std::endl;
 	}

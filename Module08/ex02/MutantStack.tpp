@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 13:33:35 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/10 10:38:40 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/08/11 10:10:31 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::end() {
 	return (this->c.end());
 }
-
 
 template <typename T>
 typename MutantStack<T>::const_iterator MutantStack<T>::begin() const {
