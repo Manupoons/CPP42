@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:21:36 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/11 08:55:19 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/08/17 11:37:19 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ int main(void) {
 		std::deque<int> numbers;
 		numbers.push_back(1);
 		numbers.push_back(3);
-		numbers.push_front(9);
+		numbers.push_back(9);
 		numbers.push_back(7);
-		numbers.push_front(5);
+		numbers.push_back(5);
 		std::cout << "Deque: ";
 		for (std::deque<int>::iterator it = numbers.begin(); it != numbers.end(); it++) {
 			std::cout << *it << " ";
