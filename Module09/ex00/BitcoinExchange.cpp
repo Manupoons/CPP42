@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 10:35:21 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/11 12:30:30 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/08/31 13:42:47 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,6 @@ void BitcoinExchange::loadDatabase(const std::string &filename)
 		double value = atof(valueStr.c_str());
 		_database[date] = value;
 	}
-}
-
-static bool checkHeader(const std::string &line)
-{
-	return (line == "date | value");
 }
 
 static bool isDigitString(const std::string &str)
@@ -124,7 +119,7 @@ void BitcoinExchange::processInputFile(const std::string &filename) const
 	
 	std::string line;
 	std::getline(file, line);
-	if (!checkHeader(line))
+	if (line != "date | value")
 		throw WrongHeaderFileException();
 	
 	while (std::getline(file, line))
