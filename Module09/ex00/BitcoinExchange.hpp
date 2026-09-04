@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 10:35:19 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/11 11:03:04 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/09/02 19:35:51 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ class BitcoinExchange
 		};
 
 		class WrongHeaderFileException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class DateTooOldException: public std::exception
 		{
 			public:
 				virtual const char* what() const throw();

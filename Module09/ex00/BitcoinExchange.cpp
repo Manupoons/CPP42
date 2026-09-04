@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 10:35:21 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/31 13:42:47 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/09/02 20:08:40 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,11 @@ void BitcoinExchange::loadDatabase(const std::string &filename)
 
 		if (!std::getline(iss, date, ',') || !std::getline(iss, valueStr))
 			continue;
-		double value = atof(valueStr.c_str());
+		char *end;
+		double value = strtod(valueStr.c_str(), &end);
+		if (*end != '\0')
+			continue;
+
 		_database[date] = value;
 	}
 }
@@ -67,30 +71,29 @@ static bool isDigitString(const std::string &str)
 
 static bool validateDate(const std::string &date)
 {
-	if (date.length() != 10)
+	if (date.length() != 10 || date[4] != '-' || date[7] != '-')
 		return (false);
-	if (date[4] != '-' || date[7] != '-')
+
+	std::string yearStr = date.substr(0, 4);
+	std::string monthStr = date.substr(5, 2);
+	std::string dayStr = date.substr(8, 2);
+
+	if (!isDigitString(yearStr) || !isDigitString(monthStr) || !isDigitString(dayStr))
 		return (false);
-	if (!isDigitString(date.substr(0, 4)) ||
-		!isDigitString(date.substr(5, 2)) ||
-		!isDigitString(date.substr(8, 2)))
-		return (false);
-	
-	int y = atoi(date.substr(0, 4).c_str());
-	int m = atoi(date.substr(5, 2).c_str());
-	int d = atoi(date.substr(8, 2).c_str());
+
+	int y = atoi(yearStr.c_str());
+	int m = atoi(monthStr.c_str());
+	int d = atoi(dayStr.c_str());
 
 	if (m < 1 || m > 12 || d < 1 || d > 31)
 		return (false);
 
-	int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	static const int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	int maxDay = daysInMonth[m - 1];
+	if (m == 2 && ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0))
+		maxDay = 29;
 
-	if ((y % 4 == 0 && y % 100 != 0) || (y % 400 == 0))
-		daysInMonth[1] = 29;
-
-	if (d > daysInMonth[m - 1])
-		return (false);
-	return (true);
+	return (d <= maxDay);
 }
 
 static bool parseLine(const std::string &line, std::string &date, double &value)
@@ -147,9 +150,13 @@ void BitcoinExchange::processInputFile(const std::string &filename) const
 			continue;
 		}
 		std::map<std::string, double>::const_iterator it = _database.lower_bound(date);
-		if (it != _database.begin() && (it == _database.end() || it->first > date))
+		bool exactMatch = (it != _database.end() && it->first == date);
+		if (!exactMatch)
+		{
+			if (it == _database.begin())
+				throw DateTooOldException();
 			--it;
-
+		}
 		result = value * it->second;
 		std::cout << date << " => " << value << " = " << result << std::endl;
 	}
@@ -163,4 +170,9 @@ const char* BitcoinExchange::FailOpenFileException::what() const throw()
 const char* BitcoinExchange::WrongHeaderFileException::what() const throw()
 {
 	return "Error: wrong input header";
+}
+
+const char* BitcoinExchange::DateTooOldException::what() const throw()
+{
+	return "Error: date is too old";
 }

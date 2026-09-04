@@ -6,16 +6,16 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 08:46:13 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/17 10:37:42 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/09/04 10:02:00 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
 #include <algorithm>
-#include <map>
 #include <cerrno>
 #include <cctype>
+#include <cstdio>
 
 struct CompareByValueVector
 {
@@ -41,22 +41,8 @@ std::vector<long> PmergeMe::parseArgs(int argc, char **argv)
 	for (int i = 1; i < argc; i++)
 	{
 		std::string token(argv[i]);
-		
 		if (token.empty())
 			throw PmergeMe::ErrorException();
-		
-		size_t start = 0;
-		
-		if (token[0] == '+')
-			start = 1;
-		if (start == token.length())
-			throw PmergeMe::ErrorException();
-
-		for (size_t j = start; j < token.length(); j++)
-		{
-			if (!std::isdigit(static_cast<unsigned char>(token[j])))
-				throw PmergeMe::ErrorException();
-		}
 
 		errno = 0;
 		char *end;
@@ -134,7 +120,7 @@ std::vector<size_t> PmergeMe::sortIndxVector(std::vector<size_t> indices, const 
 
 	std::vector<size_t> sortedWinners = sortIndxVector(winners, vals);
 	
-	std::map<size_t, size_t> loserOf;
+	std::vector<size_t> loserOf(vals.size());
 	for (size_t i = 0; i < winners.size(); i++)
 		loserOf[winners[i]] = losers[i];
 	
@@ -244,7 +230,7 @@ std::deque<size_t> PmergeMe::sortIndxDeque(std::deque<size_t> indices, const std
 
 	std::deque<size_t> sortedWinners = sortIndxDeque(winners, vals);
 	
-	std::map<size_t, size_t> loserOf;
+	std::vector<size_t> loserOf(vals.size());
 	for (size_t i = 0; i < winners.size(); i++)
 		loserOf[winners[i]] = losers[i];
 	

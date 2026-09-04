@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 10:30:53 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/11 12:29:26 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/09/02 19:18:42 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int check_args(int argc, char const **argv)
 
 int main(int argc, char const **argv)
 {
-	if (check_args(argc, argv) == (1))
+	if (check_args(argc, argv) == 1)
 		return (1);
 	
 	try

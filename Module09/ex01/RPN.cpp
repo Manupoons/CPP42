@@ -6,7 +6,7 @@
 /*   By: mamaratr <mamaratr@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 12:38:12 by mamaratr          #+#    #+#             */
-/*   Updated: 2026/08/11 13:50:45 by mamaratr         ###   ########.fr       */
+/*   Updated: 2026/09/02 20:24:46 by mamaratr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,19 @@ RPN::~RPN()
 {
 }
 
+static int applyOperator(char op, int left, int right)
+{
+	if (op == '+')
+		return (left + right);
+	if (op == '-')
+		return (left - right);
+	if (op == '*')
+		return (left * right);
+	if (right == 0)
+		throw RPN::ErrorException();
+	return (left / right);
+}
+
 void RPN::RPNCalculator()
 {
 	std::stack<int> tokens;
@@ -54,23 +67,11 @@ void RPN::RPNCalculator()
 			if (tokens.size() < 2)
 				throw ErrorException();
 			
-			int b = tokens.top();
+			int right = tokens.top();
 			tokens.pop();
-			int a = tokens.top();
+			int left = tokens.top();
 			tokens.pop();
-			
-			if (c == '+')
-				tokens.push(a + b);
-			else if (c == '-')
-				tokens.push(a - b);
-			else if (c == '*')
-				tokens.push(a * b);
-			else
-			{
-				if (b == 0)
-					throw ErrorException("division by zero");
-				tokens.push(a / b);
-			}
+			tokens.push(applyOperator(c, left, right));
 		}
 		else
 			throw ErrorException();
@@ -80,17 +81,7 @@ void RPN::RPNCalculator()
 	std::cout << tokens.top() << std::endl;
 }
 
-std::string RPN::getInput() const
-{
-	return (this->_input);
-}
-
-void RPN::setInput(const std::string &input)
-{
-	this->_input = input;
-}
-
 const char* RPN::ErrorException::what() const throw()
 {
-	return ((_message).c_str());
+	return "Error";
 }
