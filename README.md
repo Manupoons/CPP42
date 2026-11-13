@@ -1,8 +1,8 @@
 # CPP42
 
-My solutions to the 42 **C++ Modules** (CPP00–CPP08). They are a series of small exercises that teach C++98 step by step, after the C-only part of the 42 curriculum. Each module has a subject PDF and exercises `ex00`, `ex01`, ...
+My solutions to the 42 **C++ Modules** (CPP00–CPP09). They are a series of small exercises that teach C++98 step by step, after the C-only part of the 42 curriculum. Each module has a subject PDF and exercises `ex00`, `ex01`, ...
 
-All code is **C++98**, compiled with `c++ -Wall -Wextra -Werror -std=c++98`. The STL is forbidden until Module 08.
+All code is **C++98**, compiled with `c++ -Wall -Wextra -Werror -std=c++98`. The STL is forbidden until Module 08 (Module 09 is built around it).
 
 | Module | Topic |
 |--------|-------|
@@ -14,6 +14,7 @@ All code is **C++98**, compiled with `c++ -Wall -Wextra -Werror -std=c++98`. The
 | 05 | Repetition and exceptions (Bureaucrat and forms) |
 | 06 | C++ casts (`static_cast`, `dynamic_cast`, `reinterpret_cast`, `const_cast`), scalar conversion |
 | 07 | C++ templates |
-| 08 | Templated containers, iterators, algorithms (STL) |
+| 08 | Templated containers, iterators, algorithms (`span`, `MutantStack`) |
+| 09 | The STL: containers in practice (`BitcoinExchange`, `RPN`, `PmergeMe` / merge-insert sort) |
 
 Build any exercise with `make` inside its folder.
